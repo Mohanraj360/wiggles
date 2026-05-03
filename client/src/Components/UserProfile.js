@@ -19,6 +19,7 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const [isRemoving, setIsRemoving] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const fetchID = async () => {
       const response = await fetch(

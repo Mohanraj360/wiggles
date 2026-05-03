@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Footerimg from "../images/FooterTop.png";
-import {AiFillGithub, AiFillInstagram} from "react-icons/ai"
+import {AiFillGithub} from "react-icons/ai"
 import "../CSS/Footer.css";
 
 export default function Footer() {

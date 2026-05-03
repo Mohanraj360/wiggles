@@ -42,6 +42,7 @@ const Vaccination = () => {
     e.currentTarget.type = "text";
     e.currentTarget.placeholder = "Date";
   }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     document
       .querySelector(".vaccinationContainer")

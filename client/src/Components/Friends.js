@@ -1,5 +1,4 @@
 import FriendsCard from './FriendsCard'
-import Navbar from './Navbar'
 import "../CSS/FriendsCard.css"
 import React, { useEffect, useState } from 'react'
 import {FriendCardSkeleton} from './Skeleton/FriendsSkeleton'
@@ -13,6 +12,7 @@ export const Friends = () => {
   const navigate=useNavigate();
   const numberOfSkeletonCards = 7;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(()=>{
     setTimeout( async()=>{
     const fetchFriends=async(e)=>{

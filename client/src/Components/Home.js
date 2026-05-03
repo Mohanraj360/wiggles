@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 const Home = () => {
     const navigate = useNavigate();
-    const [cookies,setCookie, removeCookie] = useCookies();
+    const [cookies, , removeCookie] = useCookies();
     useEffect(()=>{
         const verifyCookie = async () => {
             if (!cookies.token) {
@@ -14,7 +14,7 @@ const Home = () => {
                 method:"GET",
                 credentials:'include'
             })
-            const data = await response.json();
+            await response.json();
             if(response.status===401){
                 navigate("/verify/login")
             }

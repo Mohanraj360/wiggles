@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ExploreProfileCard from "./ExploreProfileCard";
-import Navbar from "./Navbar";
 import "../CSS/Explore.css"
 import { toast } from 'react-toastify';
 import { ExploreCardSkeleton } from './Skeleton/FriendsSkeleton';
@@ -49,9 +48,9 @@ export default function Explore() {
       {users && 
       users.filter((User)=>(User._id!==userID))  //filter user
       .filter((User)=>(!(User.friends).includes(userID)))   //filter users' friends
-      .map((User)=>(
-        (User.requestRecieved).includes(userID) ? status="Pending..." : status="Connect +",   // Status based on request sent or not.
-        <ExploreProfileCard 
+      .map((User)=>{
+        status = (User.requestRecieved).includes(userID) ? "Pending..." : "Connect +";   // Status based on request sent or not.
+        return <ExploreProfileCard 
           key={User._id}
           id={User._id}
           name={User.name}
@@ -62,7 +61,7 @@ export default function Explore() {
           status={status}
           loading={loading}
         />
-      ))}
+      })}
       { !users && 
       <>
         {skeletonCards}

@@ -19,6 +19,7 @@ const Profile = () => {
   const [openEditProfile, setOpenEditProfile] = useState(false);
   const navigate=useNavigate();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
@@ -41,7 +42,7 @@ const Profile = () => {
         setName(data.foundUser.name);
         setBreed(data.foundUser.breed);
         setGender(data.foundUser.gender);
-        if(data.foundUser.image=="null"){
+        if(data.foundUser.image==="null"){
           setImage(null)
         }
         else{

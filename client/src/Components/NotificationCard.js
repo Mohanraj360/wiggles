@@ -89,7 +89,7 @@ const NotificationCard = ({ id, friendID, title, message, image, allnotification
         </div>
         :
         <div className="noNewNotification">
-          <img src={noNotification}/>
+          <img src={noNotification} alt="no notifications"/>
           <h3 >You have no new notifications yet.</h3>
           <p >When you get notifications, they'll show up here</p>
           {/* <button className='btn'>Refresh</button> */}

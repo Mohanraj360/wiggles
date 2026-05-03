@@ -24,7 +24,7 @@ const ChangePassword = () => {
     e.preventDefault();
     const validatePassword = (password) => {
       // Password regex pattern: Atleast 8-20 letter and Atleast one letter and one number
-      const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]{8,20}$/;
+      const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+{}[\]:;<>,.?~\\/-]{8,20}$/;
       return passwordPattern.test(password);
     };
     

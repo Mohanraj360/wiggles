@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import Navbar from "../Components/Navbar";
 import ReactSwitch from "react-switch";
 import "../CSS/QRGenerator.css";
 import { toast } from "react-toastify";
@@ -42,6 +41,7 @@ export default function QRGenerator() {
     setRefresh(!refresh);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const fetchData = async () => {
       try {

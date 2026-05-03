@@ -136,16 +136,16 @@ const AboutCreatorsCard = ({
         <div>
           <h1>{creatorName}</h1>
           <IconContext.Provider value={{ className: "creatorIcons" }}>
-            <a href={github} target="_blank">
+            <a href={github} target="_blank" rel="noreferrer">
               <AiFillGithub />
             </a>
-            <a href={linkedin} target="_blank">
+            <a href={linkedin} target="_blank" rel="noreferrer">
               <AiFillLinkedin />
             </a>
-            <a href={`mailto:${mail}`} target="_blank">
+            <a href={`mailto:${mail}`} target="_blank" rel="noreferrer">
               <AiFillMail />
             </a>
-            <a href={resume[creatorName]} target="_blank">
+            <a href={resume[creatorName]} target="_blank" rel="noreferrer">
               <IoDocumentTextSharp />
             </a>
           </IconContext.Provider>

@@ -18,6 +18,7 @@ const Vaccination = () => {
     const[vaccinations, setVaccinations]=useState([]);
 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=>{
         const handleContent=async()=>{
             let response;

@@ -11,15 +11,17 @@ const OTP = () => {
   const location = useLocation();
   const email = location.state;
   const [otp, setOTP] = useState();
-  const [userotp, setUserOTP] = useState([, , , , ,]);
+  const [userotp, setUserOTP] = useState(["","","","","",""]);
   const navigate = useNavigate();
 
   // Setting OTP at load time
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setOTP(Math.floor(100000 + Math.random() * 900000));
   }, []);
 
   // Sending otp when otp is changed
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!otp) return;
     const templateParams = {
@@ -45,6 +47,7 @@ const OTP = () => {
 
   // A 60s timer for expiry
   const [counter, setCounter] = useState(60);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     counter >= 0 && setTimeout(() => setCounter(counter - 1), 1000);
     if (counter === -1) {
@@ -83,7 +86,7 @@ const OTP = () => {
       input = input + num;
       return input;
     });
-    if (otp == input) {
+    if (otp === parseInt(input)) {
       navigate("/verify/ChangePassword", { state: email });
     } else {
       toast.error("Wrong OTP entered.");

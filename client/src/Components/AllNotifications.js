@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from "./Navbar"
 import NotificationCard from './NotificationCard'
 import "../CSS/Notification.css"
 import { useNavigate } from 'react-router-dom'
@@ -12,6 +11,7 @@ const AllNotifications = () => {
   const[refresh, setRefresh]=useState(false);
   const [loading,setLoading]=useState(true);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const getnotifications = async () => {
       const response = await fetch(`${process.env.REACT_APP_BASE_URL}/notifications`, {
